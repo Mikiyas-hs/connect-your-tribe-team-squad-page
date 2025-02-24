@@ -29,6 +29,16 @@ app.get('/', async function (request, response) {
   })
 })
 
+app.get('/homepage', async function (request, response) {
+  const messagesResponse = await fetch(`https://fdnd.directus.app/items/messages/?filter={"for":"Team ${teamName}"}`)
+  const messagesResponseJSON = await messagesResponse.json()
+
+  response.render('homepage.liquid', {
+    teamName: teamName,
+    messages: messagesResponseJSON.data
+  })
+})
+
 app.post('/', async function (request, response) {
   await fetch('https://fdnd.directus.app/items/messages/', {
     method: 'POST',
