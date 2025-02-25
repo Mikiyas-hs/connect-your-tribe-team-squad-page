@@ -55,6 +55,16 @@ app.post('/', async function (request, response) {
   response.redirect(303, '/')
 })
 
+//Team packs page 
+app.get('/teampacks', async function (request, response) {
+  const messagesResponse = await fetch(`https://fdnd.directus.app/items/`)
+  const messagesResponseJSON = await messagesResponse.json()
+
+  response.render('teampacks.liquid', {
+    teamName: teamName,
+    messages: messagesResponseJSON.data
+  })
+})
 
 app.set('port', process.env.PORT || 8000)
 

@@ -2,6 +2,23 @@
     margin: 0;
 }
 
+@font-face {
+    font-family: 'Brazil', Arial, Helvetica, sans-serif;
+    src: url(./assets/fifa_font_pack_by_dledeviant_dc8xl5l/Brazil\ 2014/Pagode.otf);
+}
+
+:root{
+    --primary-font-brazil: 'Brazil';
+
+    --button-color-normal: rgb(217, 187, 112);
+    --button-border-color-normal: rgb(212, 99, 2);
+    --button-text-color-normal:white;
+    --button-color-hover: rgb(228, 229, 226);
+    --button-border-hover: rgb(82, 73, 45);
+    --button-text-color-hover:rgb(82, 73, 45);
+    
+}
+
 body {
     display: flex;
     flex-direction: column;
