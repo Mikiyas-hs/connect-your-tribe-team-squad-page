@@ -8,8 +8,11 @@
 }
 
 :root{
+
+    /*fonts*/
     --primary-font-brazil: 'Brazil';
 
+    /*buttons and button states*/
     --button-color-normal: rgb(217, 187, 112);
     --button-border-color-normal: rgb(212, 99, 2);
     --button-text-color-normal:white;
