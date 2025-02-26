@@ -29,16 +29,6 @@ app.get('/', async function (request, response) {
   })
 })
 
-app.get('/homepage', async function (request, response) {
-  const messagesResponse = await fetch(`https://fdnd.directus.app/items/messages/?filter={"for":"Team ${teamName}"}`)
-  const messagesResponseJSON = await messagesResponse.json()
-
-  response.render('homepage.liquid', {
-    teamName: teamName,
-    messages: messagesResponseJSON.data
-  })
-})
-
 app.post('/', async function (request, response) {
   await fetch('https://fdnd.directus.app/items/messages/', {
     method: 'POST',
@@ -69,6 +59,24 @@ app.get('/teampacks', async function (request, response) {
     });
   } catch (error) {
     console.error("Error fetching team packs:", error);
+    response.status(500).send("Something went wrong.");
+  }
+});
+
+//  Homepage 
+app.get('/homepage', async function (request, response) {
+  try {
+    // Fetch messages from the correct Directus collection
+    const messagesResponse = await fetch('https://fdnd.directus.app/items/homepage');
+    const messagesResponseJSON = await messagesResponse.json();
+
+    // Render the homepage.liquid template and pass data
+    response.render('homepage.liquid', {
+      teamName: "Blaze", // Replace with a real variable if available
+      messages: messagesResponseJSON.data
+    });
+  } catch (error) {
+    console.error("Error fetching homepage:", error);
     response.status(500).send("Something went wrong.");
   }
 });
