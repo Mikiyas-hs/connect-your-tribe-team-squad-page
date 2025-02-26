@@ -46,7 +46,6 @@ body {
     font-family: var(--primary-font-brazil);
     height: 100vh;
     margin: 0;
-    background-image: url("background.png");
 }
 
 h1{
