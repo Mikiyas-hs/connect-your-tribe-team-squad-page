@@ -19,15 +19,15 @@ app.set('views', './views')
 app.use(express.urlencoded({extended: true}))
 
 
-app.get('/', async function (request, response) {
-  const messagesResponse = await fetch(`https://fdnd.directus.app/items/messages/?filter={"for":"Team ${teamName}"}`)
-  const messagesResponseJSON = await messagesResponse.json()
+//app.get('/', async function (request, response) {
+  //const messagesResponse = await fetch(`https://fdnd.directus.app/items/messages/?filter={"for":"Team ${teamName}"}`)
+  //const messagesResponseJSON = await messagesResponse.json()
 
-  response.render('index.liquid', {
-    teamName: teamName,
-    messages: messagesResponseJSON.data
-  })
-})
+  //response.render('index.liquid', {
+   // teamName: teamName,
+   // messages: messagesResponseJSON.data
+ // })
+//})
 
 app.post('/', async function (request, response) {
   await fetch('https://fdnd.directus.app/items/messages/', {
@@ -64,14 +64,14 @@ app.get('/teampacks', async function (request, response) {
 });
 
 //  Homepage 
-app.get('/homepage', async function (request, response) {
+app.get('/', async function (request, response) {
   try {
     // Fetch messages from the correct Directus collection
     const messagesResponse = await fetch('https://fdnd.directus.app/items/homepage');
     const messagesResponseJSON = await messagesResponse.json();
 
-    // Render the homepage.liquid template and pass data
-    response.render('homepage.liquid', {
+    // Render the index.liquid template and pass data
+    response.render('index.liquid', {
       teamName: "Blaze", // Replace with a real variable if available
       messages: messagesResponseJSON.data
     });
