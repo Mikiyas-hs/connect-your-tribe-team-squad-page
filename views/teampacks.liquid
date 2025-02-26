@@ -4,12 +4,6 @@
 
     <link rel="stylesheet" href="/public/styles/teampacks.css">
 
-    <div id="loader" class="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-
 <main>
     <section class="team-pack-container" id="teamPackContainer">
      {% for pack in (1..6) %}
@@ -23,9 +17,9 @@
     </section>
 
         <!-- Loader Animation -->
-         <section id="loader">
-            <svg class="loader spinner hidden"
-            viewBox="0 0 100 100" overflow="visible">
+        <section id="loader" class="hidden">
+            <svg class="loader spinner"
+            viewBox="0 0 100 100" overflow="visible">        
                 <g class="core">
                   <circle class="path" cx="50" cy="50" r="1" fill="none" />
                 </g>
