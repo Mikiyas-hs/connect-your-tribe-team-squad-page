@@ -1,11 +1,14 @@
 {% render 'partials/head.liquid' %}
 
+    <link rel="stylesheet" href="teampacks.css">
 <main>
     <section class="team-pack-container">
-        <a href="/team/{{teamName}}" class="pack">
-            <img src="/public/assets/images/image 7.png" alt="team pack {{teamName}}">
-            <p>{{teamName}}</p>
-        </a>
+     {% for pack in (1..6) %}
+        <article class="team-pack">
+            <img src="/assets/images/image 7.png" alt="team-pack">
+            <h1>open team {{ teamName }}</h1>
+        </article>
+        {% endfor %}
     </section>
 </main>
 
