@@ -17,6 +17,18 @@ document.querySelectorAll('.pack').forEach(pack => {
             console.log("Loader shown!"); 
         }
 
+        const openingSound = document.getElementById('openingSound');
+        if (openingSound) {
+            openingSound.classList.remove('hidden');
+            console.log("openingSound shown!"); 
+        }
+
+
+        const spotifyPlayer = document.getElementById('spotifyPlayer');
+        if (spotifyPlayer) {
+            spotifyPlayer.classList.remove('hidden');  
+        }
+
         setTimeout(() => {
             if (loader) {
                 loader.classList.add('hidden');
