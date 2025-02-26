@@ -3,14 +3,22 @@
     <link rel="stylesheet" href="teampacks.css">
 <main>
     <section class="team-pack-container">
+<<<<<<< Updated upstream
      {% for pack in (1..6) %}
         <article class="team-pack">
             <img src="/assets/images/image 7.png" alt="team-pack">
             <h1>open team {{ teamName }}</h1>
         </article>
         {% endfor %}
+=======
+        <a href="/team/{{teamName}}" class="pack">
+            <img src="/assets/images/image 7.png" alt="team pack {{teamName}}">
+            <p>{{teamName}}</p>
+        </a>
+>>>>>>> Stashed changes
     </section>
 </main>
 
+<script src="/script.js"></script>
 
-{% render 'partials/footer.liquid' %}
+ {% render 'partials/footer.liquid' %}

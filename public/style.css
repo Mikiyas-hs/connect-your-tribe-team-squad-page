@@ -32,6 +32,8 @@
 
     --border-radius: 50px;
 
+    /*padding*/
+
 
     
 }
@@ -44,8 +46,10 @@ body {
     font-family: var(--primary-font-brazil);
     height: 100vh;
     margin: 0;
+    background-image: url("background.png");
 }
 
+<<<<<<< Updated upstream
 .homepage {
     background-image: url('/assets/images/background.png');
   background-size: cover;
@@ -54,6 +58,9 @@ body {
 }
 
 h1 {
+=======
+h1{
+>>>>>>> Stashed changes
     color: rgb(217, 187, 112);
     padding-bottom: 3em;
     font-size: 2.8em;
@@ -86,8 +93,7 @@ h1 {
     }
 }
 
-
-footer {
+footer{
     position: fixed;
     right: 0;
     bottom: 0;
