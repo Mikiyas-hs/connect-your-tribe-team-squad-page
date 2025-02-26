@@ -1,3 +1,45 @@
-main{
-    background-color: rgb(221, 221, 125);
+.hidden{
+    display: none;
+}
+
+.loader {
+    width: 8vw;
+    height: 8vw;
+}
+
+.layer-1, .layer-2 {
+    transform-origin: center;
+    animation: rotate 1.5s linear infinite;
+}
+
+.path {
+    stroke: var(--ring-color);
+    stroke-dasharray: 180;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash 2s ease-in-out infinite;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 100, 200;
+        stroke-dashoffset: -20;
+    }
+    100% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: -100;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

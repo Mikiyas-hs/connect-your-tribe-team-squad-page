@@ -1,24 +1,72 @@
 {% render 'partials/head.liquid' %}
 
     <link rel="stylesheet" href="teampacks.css">
+
+    <link rel="stylesheet" href="/public/styles/teampacks.css">
+
+    <div id="loader" class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
 <main>
-    <section class="team-pack-container">
-<<<<<<< Updated upstream
+    <section class="team-pack-container" id="teamPackContainer">
      {% for pack in (1..6) %}
-        <article class="team-pack">
-            <img src="/assets/images/image 7.png" alt="team-pack">
-            <h1>open team {{ teamName }}</h1>
+        <article class="team-pack"> 
+            <a href="#" class="pack" data-team-name="{{teamName}}">
+                <img src="/assets/images/image 7.png" alt="team-pack">
+                <h1>open team {{ teamName }}</h1>
+            </a>
         </article>
         {% endfor %}
-=======
-        <a href="/team/{{teamName}}" class="pack">
-            <img src="/assets/images/image 7.png" alt="team pack {{teamName}}">
-            <p>{{teamName}}</p>
-        </a>
->>>>>>> Stashed changes
     </section>
+
+        <!-- Loader Animation -->
+         <section id="loader">
+            <svg class="loader spinner hidden"
+            viewBox="0 0 100 100" overflow="visible">
+                <g class="core">
+                  <circle class="path" cx="50" cy="50" r="1" fill="none" />
+                </g>
+                <g class="layer-1">
+                  <circle class="path" cx="50" cy="50" r="70" fill="none" />
+                </g>
+                <g class="layer-2">
+                  <circle class="path" cx="50" cy="50" r="120" fill="none" />
+                </g>
+                <g class="layer-3">
+                  <circle class="path" cx="50" cy="50" r="180" fill="none" />
+                </g>
+                <g class="layer-4">
+                  <circle class="path" cx="50" cy="50" r="240" fill="none" />
+                </g>
+                <g class="layer-5">
+                  <circle class="path" cx="50" cy="50" r="300" fill="none" />
+                </g>
+                <g class="layer-6">
+                  <circle class="path" cx="50" cy="50" r="380" fill="none" />
+                </g>
+                <g class="layer-7">
+                  <circle class="path" cx="50" cy="50" r="450" fill="none" />
+                </g>
+                <g class="layer-8">
+                  <circle class="path" cx="50" cy="50" r="540" fill="none" />
+                </g>
+              </svg>
+         </section>
+        
+
+
+    <section class="team-container hidden" id="teamContainer">
+        <h1 id="teamTitle">Team</h1>
+        <article class="team-member person">
+            <h2>Hello {{personName}}</h2>
+        </article>
+    </section>
+
 </main>
 
-<script src="/script.js"></script>
+<script src="script.js"> </script>
 
  {% render 'partials/footer.liquid' %}
