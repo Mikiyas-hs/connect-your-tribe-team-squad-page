@@ -1,0 +1,27 @@
+.team-pack-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    justify-items: center; 
+    align-items: center; 
+    height: 86vh; 
+}
+
+
+.team-pack {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    height: 100%; 
+}
+
+.team-pack img {
+    max-width: 150px; 
+    height: auto;
+}
+
+h1 {
+    padding-bottom: 0em;
+}
