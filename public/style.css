@@ -27,6 +27,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: var(--primary-font-brazil);
     height: 100vh;
     margin: 0;
     background-image: url("background.png");
@@ -51,16 +52,16 @@ h1{
         align-items: center;
         width: 12em;
         height: 4em;
-        background-color: rgb(217, 187, 112);
-        border: 3px solid rgb(212, 99, 2);
+        background-color: var(--button-color-normal);
+        border: 3px solid var(--button-border-color-normal);
         border-radius: 50px;
         text-decoration: none;
-        color: white;
+        color: var(--button-text-color-normal);
 
         &:hover {
-            background-color: rgb(228, 229, 226);
-            border-color: rgb(82, 73, 45);
-            color: rgb(82, 73, 45);
+            background-color: var(--button-color-hover);
+            border-color: var(--button-border-hover);
+            color: var(--button-text-color-hover);
         }
     }
 }
