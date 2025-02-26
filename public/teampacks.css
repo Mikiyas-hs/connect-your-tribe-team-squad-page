@@ -25,3 +25,10 @@
 h1 {
     padding-bottom: 0em;
 }
+
+
+/*Person fifa cards*/
+.fifa-card{
+    width: 25vw;
+    height: auto;
+}

@@ -33,7 +33,7 @@
 
 .layer-7, .layer-8{
     transform-origin: center;
-    animation: rotate .75s linear infinite;
+    animation: rotate .75s  linear infinite;
 }
 
 .path {

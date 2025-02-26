@@ -4,6 +4,7 @@
 
 
 <main>
+    <!--team packs-->
     <section class="team-pack-container " id="teamPackContainer">
      {% for pack in (1..6) %}
         <article class="team-pack"> 
@@ -50,14 +51,21 @@
          </section>
         
 
+         <!--team member reveal-->
 
     <section class="team-container hidden" id="teamContainer">
-        <h1 id="teamTitle">Team</h1>
+        <h1 id="teamTitle">Team {{teamName}}</h1>
         <article class="team-member person">
-            <h2>Hello {{personName}}</h2>
+            <img class="fifa-card" src="/assets/images/fifa card 11.png" alt="">
+            <div class="person-card-content">
+                <img src="{{personAvatar}}" alt="">
+                <h2>{{personName}}</h2>
+                <h3>{{PersonId}}</h3>
+            </div>
         </article>
     </section>
 
+    <!--love me again sound-->
     <iframe class="hidden" id="openingSound" style="border-radius:12px" src="https://open.spotify.com/embed/track/5TbzAWWc5eJaANpA9kfGCd?utm_source=generator" 
     width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
     loading="lazy"></iframe>
