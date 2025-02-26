@@ -49,18 +49,7 @@ body {
     background-image: url("background.png");
 }
 
-<<<<<<< Updated upstream
-.homepage {
-    background-image: url('/assets/images/background.png');
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-}
-
-h1 {
-=======
 h1{
->>>>>>> Stashed changes
     color: rgb(217, 187, 112);
     padding-bottom: 3em;
     font-size: 2.8em;
