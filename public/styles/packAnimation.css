@@ -28,12 +28,12 @@
 
 .layer-1, .layer-2 {
     transform-origin: center;
-    animation: rotate 1.5s linear infinite;
+    animation: rotate 0.5s linear infinite;
 }
 
 .layer-7, .layer-8{
     transform-origin: center;
-    animation: rotate 2.3s linear infinite;
+    animation: rotate .75s linear infinite;
 }
 
 .path {
