@@ -1,20 +1,35 @@
+console.log("Script loaded!"); 
+
 document.querySelectorAll('.pack').forEach(pack => {
     pack.addEventListener('click', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
+        console.log("Pack clicked!"); 
 
-        console.log("Pack clicked, hiding team-pack-container...");
-        document.querySelector('.team-pack-container').classList.add('hidden');
+        const teamPackContainer = document.querySelector('.team-pack-container');
+        if (teamPackContainer) {
+            teamPackContainer.classList.add('hidden');
+            console.log("Team pack container hidden!");
+        }
 
         const loader = document.getElementById('loader');
-        console.log("Showing loader...");
-        loader.classList.remove('hidden');
+        if (loader) {
+            loader.classList.remove('hidden');
+            console.log("Loader shown!"); 
+        }
 
         setTimeout(() => {
-            console.log("Hiding loader...");
-            loader.classList.add('hidden'); 
+            if (loader) {
+                loader.classList.add('hidden');
+                console.log("Loader hidden!"); 
+            }
 
-            console.log("Showing team container...");
-            document.querySelector('.team-container').classList.remove('hidden');
-        }, 2000); 
+            const teamContainer = document.querySelector('.team-container');
+            if (teamContainer) {
+                teamContainer.classList.remove('hidden');
+                console.log("Team container shown!"); 
+            }
+        }, 2000);
     });
 });
+
+//added console.log for debugging reasons.

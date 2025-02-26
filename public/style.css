@@ -37,6 +37,7 @@
     /*loader ring(s)*/
     --ring-white:#ffffff35;
     --ring-color: #9c9c9c;
+    --ring-background: rgba(255, 255, 255, 0.8);
 
     
 }

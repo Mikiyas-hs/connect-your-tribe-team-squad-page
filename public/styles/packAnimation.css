@@ -1,22 +1,46 @@
-.hidden{
-    display: none;
+.hidden {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
 }
+
 
 .loader {
     width: 8vw;
     height: 8vw;
 }
 
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    transition: ease-in-out .76s;
+    width: 100vw; 
+    height: 100vh; 
+    background: var(--ring-background); 
+    z-index: 999; 
+}
+
+
 .layer-1, .layer-2 {
     transform-origin: center;
     animation: rotate 1.5s linear infinite;
 }
 
+.layer-7, .layer-8{
+    transform-origin: center;
+    animation: rotate 2.3s linear infinite;
+}
+
 .path {
     stroke: var(--ring-color);
+    stroke-width: 1.5em;
     stroke-dasharray: 180;
     stroke-dashoffset: 0;
-    stroke-linecap: round;
     animation: dash 2s ease-in-out infinite;
 }
 
