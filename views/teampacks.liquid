@@ -2,11 +2,12 @@
 
 <main>
     <section class="team-pack-container">
-        <article class="team-pack">
-            <h1>open team {{ teamName }}</h1>
-            <img src="/assets/images/image 7.png" alt="team-pack">
-        </article>
+        <a href="/team/{{teamName}}" class="pack">
+            <img src="/public/assets/images/image 7.png" alt="team pack {{teamName}}">
+            <p>{{teamName}}</p>
+        </a>
     </section>
 </main>
+
 
 {% render 'partials/footer.liquid' %}

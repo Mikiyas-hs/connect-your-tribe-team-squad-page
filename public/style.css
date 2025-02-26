@@ -12,6 +12,13 @@
     /*fonts*/
     --primary-font-brazil: 'Brazil';
 
+    --font-size-s: 0.875em;  /* Small */
+    --font-size-m: 1em;      /* Medium (Base size) */
+    --font-size-l: 1.25em;   /* Large */
+    --font-size-xl: 1.5em;   /* Extra Large */
+    --font-size-xxl: 2em;    /* Double Extra Large */
+
+
     /*buttons and button states*/
     --button-color-normal: rgb(217, 187, 112);
     --button-border-color-normal: rgb(212, 99, 2);
@@ -20,6 +27,12 @@
     --button-color-hover: rgb(228, 229, 226);
     --button-border-hover: rgb(82, 73, 45);
     --button-text-color-hover:rgb(82, 73, 45);
+
+    /*borders*/
+
+    --border-radius: 50px;
+
+
     
 }
 
