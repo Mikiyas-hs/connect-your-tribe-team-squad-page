@@ -22,7 +22,18 @@ body {
     align-items: center; 
     height: 100vh;
     width: 90vw; 
+
+    @media (min-width: 48em) {
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+    }
+
+    @media (min-width: 64em) { 
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
 }
+
 
 
 .team-pack {
@@ -39,6 +50,14 @@ body {
 .team-pack img {
     max-width: 7em;
     height: auto;
+
+    @media (min-width: 48em) {
+        max-width: 10em;
+    }
+
+    @media (min-width: 64em) {
+        max-width: 11em;
+    }
 }
 
 
