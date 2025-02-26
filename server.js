@@ -55,16 +55,24 @@ app.post('/', async function (request, response) {
   response.redirect(303, '/')
 })
 
-//Team packs page 
+// Team packs page 
 app.get('/teampacks', async function (request, response) {
-  const messagesResponse = await fetch(`https://fdnd.directus.app/items/`)
-  const messagesResponseJSON = await messagesResponse.json()
+  try {
+    // Fetch messages from the correct Directus collection
+    const messagesResponse = await fetch('https://fdnd.directus.app/items/teampacks');
+    const messagesResponseJSON = await messagesResponse.json();
 
-  response.render('teampacks.liquid', {
-    teamName: teamName,
-    messages: messagesResponseJSON.data
-  })
-})
+    // Render the teampacks.liquid template and pass data
+    response.render('teampacks.liquid', {
+      teamName: "Blaze", // Replace with a real variable if available
+      messages: messagesResponseJSON.data
+    });
+  } catch (error) {
+    console.error("Error fetching team packs:", error);
+    response.status(500).send("Something went wrong.");
+  }
+});
+
 
 app.set('port', process.env.PORT || 8000)
 
