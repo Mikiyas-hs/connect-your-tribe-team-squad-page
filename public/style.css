@@ -46,6 +46,13 @@ body {
     margin: 0;
 }
 
+.homepage {
+    background-image: url('/assets/images/background.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
 h1 {
     color: rgb(217, 187, 112);
     padding-bottom: 3em;
@@ -87,5 +94,6 @@ footer {
     margin: 1em;
     p{
         font-size: 1em;
+        color: rgb(217, 187, 112);
     }
 }
