@@ -79,7 +79,7 @@ app.get('/teampacks', async function (request, response) {
 
 // Player page route
 app.get('/players', async function (request, response) {
-  response.render('player.liquid'); // Renders the views/player.liquid file
+  response.render('player.liquid'); 
 });
 
 

@@ -2,8 +2,14 @@ console.log("Script loaded!");
 
 document.querySelectorAll('.pack').forEach(pack => {
     pack.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("Pack clicked!"); 
+        event.preventDefault(); 
+        console.log("Pack clicked!");
+
+        const loader = document.getElementById('loader');
+        if (loader) {
+            loader.classList.remove('hidden'); // Show loader
+            console.log("Loader shown!");
+        }
 
         const teamPackContainer = document.querySelector('.team-pack-container');
         if (teamPackContainer) {
@@ -11,37 +17,16 @@ document.querySelectorAll('.pack').forEach(pack => {
             console.log("Team pack container hidden!");
         }
 
-        const loader = document.getElementById('loader');
-        if (loader) {
-            loader.classList.remove('hidden');
-            console.log("Loader shown!"); 
-        }
-
-        const openingSound = document.getElementById('openingSound');
-        if (openingSound) {
-            openingSound.classList.remove('hidden');
-            console.log("openingSound shown!"); 
-        }
-
-
-        const spotifyPlayer = document.getElementById('spotifyPlayer');
-        if (spotifyPlayer) {
-            spotifyPlayer.classList.remove('hidden');  
-        }
-
         setTimeout(() => {
-            if (loader) {
-                loader.classList.add('hidden');
-                console.log("Loader hidden!"); 
-            }
-
-            const teamContainer = document.querySelector('.team-container');
-            if (teamContainer) {
-                teamContainer.classList.remove('hidden');
-                console.log("Team container shown!"); 
-            }
+            window.location.href = "/players"; 
         }, 2000);
     });
+
 });
+
+const spotifyPlayer = document.getElementById('spotifyPlayer');
+if (spotifyPlayer) {
+    spotifyPlayer.classList.remove('hidden');  
+}
 
 //added console.log for debugging reasons.

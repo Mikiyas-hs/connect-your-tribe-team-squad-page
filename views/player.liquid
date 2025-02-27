@@ -1,12 +1,12 @@
 {% render 'partials/head.liquid' %}
 
 <link rel="stylesheet" href="teampacks.css">
+<link rel="stylesheet" href="players.css">
 
 <main>
              <!--team member reveal-->
-
              <section class="team-container hidden" id="teamContainer">
-                <h1 id="teamTitle">{{ person.team }}</h1>
+                <h1 id="teamTitle">opened {{ person.team }} pack</h1>
                 <ul>
                   {% for person in persons %}
                   <li>

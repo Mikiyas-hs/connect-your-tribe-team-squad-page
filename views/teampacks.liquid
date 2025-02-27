@@ -12,7 +12,7 @@
       {% if person.team != null and person.team != '' %}
         {% unless seen_teams contains person.team %}
         <li class="team-pack"> 
-            <a href="/views/player.liquid" class="pack" data-team-name="{{teamName}}">
+            <a href="/players" class="pack">
                 <img src="/assets/images/image 7.png" alt="team-pack">
                 <h1>open team {{ person.team }}</h1>
             </a>
