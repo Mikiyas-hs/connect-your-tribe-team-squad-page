@@ -7,13 +7,19 @@
     <!--team packs-->
     <section class="team-pack-container " id="teamPackContainer">
       <ul>
+        {% assign seen_teams = "" %}
      {% for person in persons %}
+      {% if person.team != null and person.team != '' %}
+        {% unless seen_teams contains person.team %}
         <li class="team-pack"> 
             <a href="/views/player.liquid" class="pack" data-team-name="{{teamName}}">
                 <img src="/assets/images/image 7.png" alt="team-pack">
                 <h1>open team {{ person.team }}</h1>
             </a>
         </li>
+        {% assign seen_teams = seen_teams | append: "," | append: person.team %}
+    {% endunless %}
+      {% endif %}
         {% endfor %}
         </ul>
     </section>

@@ -5,7 +5,7 @@
 }
 
 body {
-    overflow: hidden; 
+    /* overflow: hidden;  */
     background-image: url("/assets/images/footballpitch.jpg");
     background-size: cover; 
     background-position: center; 
