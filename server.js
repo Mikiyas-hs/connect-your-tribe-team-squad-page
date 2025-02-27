@@ -78,12 +78,19 @@ app.get('/teampacks', async function (request, response) {
 })
 
 // Player page route
-app.get('/players', async function (request, response) {
+app.get('/player/:team', async function (request, response) {
+  const teamName = request.params.team; // Haalt de teamnaam uit de URL
+  const people = await fetchPeopleWithTeams(squadResponseJSON);
+
+  // Filter de personen die bij dit team horen
+  const teamPlayers = people.filter(person => person.team === teamName);
+
   response.render('player.liquid', {
-    persons: await fetchPeopleWithTeams(squadResponseJSON), 
+    persons: teamPlayers, 
+    teamName: teamName,
     squads: squadResponseJSON.data
-  })
-})
+  });
+});
 
 
 
