@@ -1,9 +1,5 @@
-
-.card-container {
-    position: relative;
-    width: 90vw; 
-    height: auto;
-    margin: 0 auto; 
+.team-container {
+    text-align: center;
 }
 
 ul {
@@ -11,47 +7,90 @@ ul {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3em;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1.5rem; 
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 li {
+    width: 90%; 
+    position: relative; 
+
+    @media (min-width: 768px){
+        width: 35vw;
+    }
+}
+
+.team-member.person {
+    position: relative; 
     width: 100%;
 }
 
 .fifa-card {
     width: 100%;
-    height: auto;
-    display: block;
     position: relative;
-    z-index: 0;
+    z-index: 1; 
 }
 
 .person-card-content {
     position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-    z-index: 2;
+    width: 80%; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; 
+    transition: opacity 0.3s ease-in-out;
+    color: var(--black);
+    font-size: var(--font-size-s);
 }
 
-.avatar {
-    width: 25vw;
-    height: auto;
-    border-radius: 50%;
+
+.person-card-content h2{
+    font-size: var(--font-size-l);
+    padding-top: 2.5em;
+
+    @media (min-width: 768px){
+        padding-top: 4em;
+        font-size: calc(var(--font-size-l)*1.5);
+    }
 }
 
 
-.player-name {
-    font-size: 1rem;
+
+.person-card-content .top-content-container {
+    display: flex;
+    align-items: center; 
+    gap: 2.5em; 
+
+    @media (min-width: 768px){
+        gap: 4em;
+    }
+}
+
+
+.person-card-content img {
+    width: 5em; 
+    height: 5em;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 1px solid var(--black);
+
+    @media (min-width: 768px){
+        width: 7em; 
+        height: 7em;
+    }
+}
+
+
+.person-card-content p {
+    font-size: var(--font-size-xl);
     font-weight: bold;
-    color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: 3em;
 }
-
