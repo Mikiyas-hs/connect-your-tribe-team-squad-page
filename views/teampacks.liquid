@@ -6,14 +6,16 @@
 <main>
     <!--team packs-->
     <section class="team-pack-container " id="teamPackContainer">
-     {% for pack in (1..6) %}
-        <article class="team-pack"> 
+      <ul>
+     {% for person in persons %}
+        <li class="team-pack"> 
             <a href="#" class="pack" data-team-name="{{teamName}}">
                 <img src="/assets/images/image 7.png" alt="team-pack">
-                <h1>open team {{ teamName }}</h1>
+                <h1>open team {{ person.team }}</h1>
             </a>
-        </article>
+        </li>
         {% endfor %}
+        </ul>
     </section>
 
         <!-- Loader Animation -->
@@ -55,14 +57,16 @@
 
     <section class="team-container hidden" id="teamContainer">
         <h1 id="teamTitle">Team {{teamName}}</h1>
+
+        {% for person in persons %}
         <article class="team-member person">
             <img class="fifa-card" src="/assets/images/fifa card 11.png" alt="">
             <div class="person-card-content">
-                <img src="{{personAvatar}}" alt="">
-                <h2>{{personName}}</h2>
-                <h3>{{PersonId}}</h3>
+                <img src="{{ person.avatar }}" alt="">
+                <h2>{{ person.name }}</h2>
             </div>
         </article>
+        {% endfor %}
     </section>
 
     <!--love me again sound-->

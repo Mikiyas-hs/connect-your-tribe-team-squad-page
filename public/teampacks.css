@@ -14,7 +14,7 @@ body {
     width: 100vw;
 }
 
-.team-pack-container {
+ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(3, 1fr);
@@ -36,7 +36,7 @@ body {
 
 
 
-.team-pack {
+li {
     display: flex;
     flex-direction: column;
     justify-content: center; 
