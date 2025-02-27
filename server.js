@@ -2,6 +2,11 @@ import express from 'express'
 
 import { Liquid } from 'liquidjs';
 
+// Haal alle eerstejaars squads uit de WHOIS API op van dit jaar (2024–2025)
+const squadResponse = await fetch('https://fdnd.directus.app/items/squad?filter={"_and":[{"cohort":"2425"},{"tribe":{"name":"FDND Jaar 1"}}]}')
+
+// Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
+const squadResponseJSON = await squadResponse.json()
 
 // Vul hier jullie team naam in
 const teamName = 'Blaze';
@@ -18,16 +23,16 @@ app.set('views', './views')
 
 app.use(express.urlencoded({extended: true}))
 
+//index.liquid
+app.get('/', async function (request, response) {
+  const messagesResponse = await fetch(`https://fdnd.directus.app/items/messages/?filter={"for":"Team ${teamName}"}`)
+  const messagesResponseJSON = await messagesResponse.json()
 
-//app.get('/', async function (request, response) {
-  //const messagesResponse = await fetch(`https://fdnd.directus.app/items/messages/?filter={"for":"Team ${teamName}"}`)
-  //const messagesResponseJSON = await messagesResponse.json()
-
-  //response.render('index.liquid', {
-   // teamName: teamName,
-   // messages: messagesResponseJSON.data
- // })
-//})
+  response.render('index.liquid', {
+    persons: personResponseJSON.data, 
+    squads: squadResponseJSON.data
+  })
+})
 
 app.post('/', async function (request, response) {
   await fetch('https://fdnd.directus.app/items/messages/', {
@@ -47,39 +52,21 @@ app.post('/', async function (request, response) {
 
 // Team packs page 
 app.get('/teampacks', async function (request, response) {
-  try {
-    // Fetch messages from the correct Directus collection
-    const messagesResponse = await fetch('https://fdnd.directus.app/items/teampacks');
-    const messagesResponseJSON = await messagesResponse.json();
+  
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?sort=team&fields=*,squads.squad_id.name,squads.squad_id.cohort&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 1"}}}},{"squads":{"squad_id":{"cohort":"2425"}}}]}')
 
-    // Render the teampacks.liquid template and pass data
-    response.render('teampacks.liquid', {
-      teamName: "Blaze", // Replace with a real variable if available
-      messages: messagesResponseJSON.data
-    });
-  } catch (error) {
-    console.error("Error fetching team packs:", error);
-    response.status(500).send("Something went wrong.");
-  }
-});
+  const personResponseJSON = await personResponse.json()
+  
+  response.render('teampacks.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+})
 
-//  Homepage 
-app.get('/', async function (request, response) {
-  try {
-    // Fetch messages from the correct Directus collection
-    const messagesResponse = await fetch('https://fdnd.directus.app/items/homepage');
-    const messagesResponseJSON = await messagesResponse.json();
+// Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
+app.post('/', async function (request, response) {
+  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
+  // Er is nog geen afhandeling van POST, redirect naar GET op /
+  response.redirect(303, '/')
+})
 
-    // Render the index.liquid template and pass data
-    response.render('index.liquid', {
-      teamName: "Blaze", // Replace with a real variable if available
-      messages: messagesResponseJSON.data
-    });
-  } catch (error) {
-    console.error("Error fetching homepage:", error);
-    response.status(500).send("Something went wrong.");
-  }
-});
 
 
 
