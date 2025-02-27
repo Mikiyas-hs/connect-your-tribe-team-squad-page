@@ -54,8 +54,13 @@ body {
 
 h1{
     color: rgb(217, 187, 112);
-    padding-bottom: 3em;
-    font-size: 3em;
+    padding-bottom: 2.8em;
+    font-size: 3.4em;
+    text-shadow: 
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
 }
 
 main.homepage{
@@ -74,6 +79,13 @@ main.homepage{
     
     @media(min-width: 850px){
         background-position: top;
+    }
+
+    h1{
+        @media (min-width: 850px){
+            font-size: 4.6em;
+            padding-bottom: 1.7em;
+        }
     }
 }
 
@@ -112,5 +124,10 @@ footer{
     p{
         font-size: 1em;
         color: rgb(217, 187, 112);
+        text-shadow: 
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
     }
 }
