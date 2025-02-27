@@ -78,7 +78,7 @@ app.get('/teampacks', async function (request, response) {
 })
 
 // Player page route
-app.get('/player', async function (request, response) {
+app.get('/players', async function (request, response) {
   response.render('player.liquid', {
     persons: await fetchPeopleWithTeams(squadResponseJSON), 
     squads: squadResponseJSON.data

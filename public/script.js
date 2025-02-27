@@ -11,11 +11,11 @@ document.querySelectorAll('.pack').forEach(pack => {
             console.log("Loader shown!");
         }
 
-        const teamPackContainer = document.querySelector('.team-pack-container');
-        if (teamPackContainer) {
-            teamPackContainer.classList.add('hidden');
-            console.log("Team pack container hidden!");
-        }
+        setTimeout(() => {
+            loader.classList.add('hidden'); // Hide loader
+            console.log("Loader hidden!");
+        }, 1500);
+    
 
         setTimeout(() => {
             window.location.href = "/players"; 

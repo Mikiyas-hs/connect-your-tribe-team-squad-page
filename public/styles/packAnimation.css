@@ -1,9 +1,6 @@
-.hidden {
+.hidden{
     display: none !important;
-    visibility: hidden;
-    opacity: 0;
 }
-
 
 .loader {
     width: 8vw;

@@ -5,8 +5,10 @@
 
 <main>
              <!--team member reveal-->
-             <section class="team-container hidden" id="teamContainer">
+             <section class="team-container" id="teamContainer">
                 <h1 id="teamTitle">opened {{ person.team }} pack</h1>
+
+              </article>
                 <ul>
                   {% for person in persons %}
                   <li>
@@ -21,6 +23,41 @@
                   {% endfor %}
                 </ul>
             </section>
+
+
+                   <!-- Loader Animation -->
+        <section id="loader" class="hidden">
+          <svg class="loader spinner"
+          viewBox="0 0 100 100" overflow="visible">        
+              <g class="core">
+                <circle class="path" cx="50" cy="50" r="1" fill="none" />
+              </g>
+              <g class="layer-1">
+                <circle class="path" cx="50" cy="50" r="70" fill="none" />
+              </g>
+              <g class="layer-2">
+                <circle class="path" cx="50" cy="50" r="120" fill="none" />
+              </g>
+              <g class="layer-3">
+                <circle class="path" cx="50" cy="50" r="180" fill="none" />
+              </g>
+              <g class="layer-4">
+                <circle class="path" cx="50" cy="50" r="240" fill="none" />
+              </g>
+              <g class="layer-5">
+                <circle class="path" cx="50" cy="50" r="300" fill="none" />
+              </g>
+              <g class="layer-6">
+                <circle class="path" cx="50" cy="50" r="380" fill="none" />
+              </g>
+              <g class="layer-7">
+                <circle class="path" cx="50" cy="50" r="450" fill="none" />
+              </g>
+              <g class="layer-8">
+                <circle class="path" cx="50" cy="50" r="540" fill="none" />
+              </g>
+            </svg>
+       </section>
         <!--
             !--love me again sound--
             <iframe class="hidden" id="openingSound" style="border-radius:12px" src="https://open.spotify.com/embed/track/5TbzAWWc5eJaANpA9kfGCd?utm_source=generator" 
