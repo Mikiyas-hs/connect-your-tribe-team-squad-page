@@ -94,9 +94,4 @@ if (teamName == '') {
   })
 }
 
-// Als de data 'leeg', laat dan een andere pagina zien...
-if (teamResponseJSON.data.length == 0) {
 
-} else 
-  // TODO voor Sid: deze liquid file hernoemen (Naming Things)
-  response.render('teamleden.liquid', {persons: teamResponseJSON.data, squads: squadResponseJSON.data, team_name: request.params.team})
