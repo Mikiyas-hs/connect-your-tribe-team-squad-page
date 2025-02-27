@@ -76,7 +76,14 @@ app.get('/teampacks', async function (request, response) {
     squads: squadResponseJSON.data
   })
 })
- 
+
+// Player page route
+app.get('/players', async function (request, response) {
+  response.render('player.liquid'); 
+});
+
+
+
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 app.post('/', async function (request, response) {
   // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
