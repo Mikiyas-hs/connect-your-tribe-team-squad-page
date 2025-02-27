@@ -13,9 +13,12 @@
                   {% for person in persons %}
                   <li>
                     <article class="team-member person">
-                        <img class="fifa-card" src="/assets/images/fifa card 11.png" alt="">
+                        <img class="fifa-card" src="/assets/images/fifa card 11.png" alt=" ">
                         <div class="person-card-content">
-                            <img src="{{ person.avatar }}" alt="">
+                          <div class="top-content-container">
+                            <p>99</p>
+                            <img src="{{ person.avatar }}" alt="{{ person.name }} avatar">
+                          </div>
                             <h2>{{ person.name }}</h2>
                         </div>
                     </article>
