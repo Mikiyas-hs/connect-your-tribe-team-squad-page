@@ -18,7 +18,7 @@ document.querySelectorAll('.pack').forEach(pack => {
     
 
         setTimeout(() => {
-            window.location.href = "/players"; 
+            window.location.href = "/player"; 
         }, 2000);
     });
 
