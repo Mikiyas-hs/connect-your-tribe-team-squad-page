@@ -1,10 +1,10 @@
-Squad Page
+#Squad Page
 Ontwerp en maak samen met je team een website met NodeJS, Express, JSON en Liquid.
 
-Beschrijving
+#Beschrijving
 In dit project hebben we als team een dynamische squadpagina ontwikkeld voor onze groep binnen de Frontend Design and Development (FDND) opleiding. De pagina toont informatie over alle squadleden, zoals naam, foto en contactgegevens, en haalt deze data op uit de whois.fdnd.nl API. Ons doel was om een platform te creëren waar squadleden elkaar gemakkelijk kunnen vinden en met elkaar in contact kunnen komen.
 
-Functionaliteiten
+#Functionaliteiten
 Overzicht van squadleden: Een lijst met alle leden, inclusief profielfoto en basisinformatie.
 Detailpagina's: Meer gedetailleerde informatie per lid bij klikken op hun profiel.
 Zoekfunctie: Mogelijkheid om leden te zoeken op naam of andere kenmerken.
@@ -41,7 +41,7 @@ Express: Een minimalistisch webframework voor Node.js dat helpt bij het bouwen v
 
 Liquid: Een template-engine die wordt gebruikt om dynamische content te renderen in HTML. Het stelt ons in staat om variabelen en logica in onze HTML-bestanden te gebruiken, wat zorgt voor flexibele en herbruikbare componenten.
 
-Installatie
+#Installatie
 Volg de onderstaande stappen om het project lokaal op je machine te installeren en uit te voeren:
 
 Repository clonen: Clone deze repository naar je lokale machine.
@@ -61,5 +61,5 @@ Applicatie starten: Start de server.
 npm start
 Toegang tot de applicatie: Open je webbrowser en ga naar http://localhost:3000 om de squadpagina te bekijken.
 
-Licentie
+#Licentie
 Dit project is gelicentieerd onder de MIT-licentie. Zie het LICENSE bestand voor meer informatie.
