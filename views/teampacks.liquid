@@ -1,6 +1,8 @@
 {% render 'partials/head.liquid' %}
 
     <link rel="stylesheet" href="teampacks.css">
+    
+
 
 
 <main>
@@ -12,7 +14,7 @@
             {% if person.team != null and person.team != '' %}
               {% unless seen_teams contains person.team %}
                 <li class="team-pack"> 
-                  <a href="/player" class="pack" data-team-name="{{teamName}}">
+                  <a href="#" class="pack" data-team-name="{{teamName}}">
                     <img src="/assets/images/image 7.png" alt="team-pack">
                     <h1>open team {{ person.team }}</h1>
                   </a>
@@ -25,7 +27,62 @@
     </section>
 
 
-        
+                     <!-- Loader Animation -->
+                     <section id="loader" class="hidden">
+                      <svg class="loader spinner"
+                      viewBox="0 0 100 100" overflow="visible">        
+                          <g class="core">
+                            <circle class="path" cx="50" cy="50" r="1" fill="none" />
+                          </g>
+                          <g class="layer-1">
+                            <circle class="path" cx="50" cy="50" r="70" fill="none" />
+                          </g>
+                          <g class="layer-2">
+                            <circle class="path" cx="50" cy="50" r="120" fill="none" />
+                          </g>
+                          <g class="layer-3">
+                            <circle class="path" cx="50" cy="50" r="180" fill="none" />
+                          </g>
+                          <g class="layer-4">
+                            <circle class="path" cx="50" cy="50" r="240" fill="none" />
+                          </g>
+                          <g class="layer-5">
+                            <circle class="path" cx="50" cy="50" r="300" fill="none" />
+                          </g>
+                          <g class="layer-6">
+                            <circle class="path" cx="50" cy="50" r="380" fill="none" />
+                          </g>
+                          <g class="layer-7">
+                            <circle class="path" cx="50" cy="50" r="450" fill="none" />
+                          </g>
+                          <g class="layer-8">
+                            <circle class="path" cx="50" cy="50" r="540" fill="none" />
+                          </g>
+                        </svg>
+                   </section>
+                   
+                                <!--team member reveal-->
+             <section class="team-container hidden" id="teamContainer">
+              <h1 id="teamTitle">opened {{ person.team }} pack</h1>
+
+            </article>
+              <ul>
+                {% for person in persons %}
+                <li>
+                  <article class="team-member person">
+                      <img class="fifa-card" src="/assets/images/fifa card 11.png" alt=" ">
+                      <div class="person-card-content">
+                        <div class="top-content-container">
+                          <p>99</p>
+                          <img src="{{ person.avatar }}" alt="{{ person.name }} avatar">
+                        </div>
+                          <h2>{{ person.name }}</h2>
+                      </div>
+                  </article>
+                </li>
+                {% endfor %}
+              </ul>
+          </section>
 
 
 
