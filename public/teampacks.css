@@ -33,7 +33,7 @@ ul {
     gap: 2em;
 
     @media (min-width: 1200px){
-        margin-inline: 12em;
+        margin-inline: 12 em;
     }
 }
 
